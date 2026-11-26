@@ -25,8 +25,12 @@ app.add_middleware(
 # Load Classes
 # ==========================
 
-train_data = datasets.ImageFolder("PlantVillage/train")
-class_names = train_data.classes
+# Class order saved in classes.json (same order as ImageFolder used in
+# training), so the API no longer needs the dataset folder to start.
+import json
+import os
+with open(os.path.join(os.path.dirname(os.path.abspath(__file__)), "classes.json")) as f:
+    class_names = json.load(f)
 num_classes = len(class_names)
 
 # ==========================
