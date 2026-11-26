@@ -1,3 +1,8 @@
+# NOTE (Nov 2026): the numbers below were typed in by hand from the training
+# graphs and the training times are rough relative values, not measurements.
+# They are kept only as a record of the original project. Use evaluate.py for
+# measured results (see results/ and the README).
+
 import matplotlib.pyplot as plt
 
 # ==========================
