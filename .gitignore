@@ -1,0 +1,11 @@
+__pycache__/
+*.pyc
+*.pth
+*.pt
+PlantVillage/
+PlantDoc*/
+data/
+node_modules/
+dist/
+.env
+results/*.png.tmp
