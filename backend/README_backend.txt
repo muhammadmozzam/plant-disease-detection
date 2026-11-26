@@ -126,7 +126,7 @@ Running on CPU
 - Add database for predictions
 
 --------------------------------------------------
-👨‍💻 Developed By ateeq khalid
+👨‍💻 Developed By Muhammad Mozzam
 --------------------------------------------------
 
 Plant Disease Detection System

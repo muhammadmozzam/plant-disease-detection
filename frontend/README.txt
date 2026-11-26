@@ -164,7 +164,7 @@ Check file type (JPG/PNG)
 - Improve UI animations
 
 --------------------------------------------------
-👨‍💻 Developed By  ateeq khalid
+👨‍💻 Developed By Muhammad Mozzam
 --------------------------------------------------
 
 Plant Disease Detection System
