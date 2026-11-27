@@ -34,7 +34,21 @@ All models use 224×224 inputs. Training scripts are in `backend/` (`rn_train_mo
 
 Measured with [`backend/evaluate.py`](backend/evaluate.py): accuracy, macro-F1, top-3 accuracy, per-class reports, confusion matrices, CPU time per image and model size, on the lab test and the field test.
 
-*Results are being run now and will be added here.*
+Measured on 27 Nov 2026 on Kaggle (CPU). The field test uses all 2,922 PlantDoc photos, each mapped to one of 28 shared classes; random guessing would score about 3.6%.
+
+| Model | Lab accuracy (PlantVillage val, 38 classes) | Lab accuracy (28 shared classes) | **Field accuracy (PlantDoc, 28 shared classes)** | Field top-3 | Field macro-F1 | CPU time / image | Size |
+|---|---|---|---|---|---|---|---|
+| ResNet18 | 97.7% | 97.7% | **13.3%** | 30.6% | 0.10 | 46.6 ms | 42.8 MB |
+| Custom CNN | 91.5% | 92.5% | **5.4%** | 15.1% | 0.04 | 9.8 ms | 24.6 MB |
+| MobileNetV2 | 99.0% | 98.9% | **10.0%** | 25.7% | 0.09 | 23.8 ms | 8.9 MB |
+
+**What this shows**
+
+- All three models look nearly perfect on lab photos and fail on field photos: accuracy falls by 85–89 percentage points.
+- The custom CNN trained from scratch is close to random guessing in the field (5.4% vs 3.6%); the two ImageNet-pretrained models keep a little more (10–13%).
+- The best lab model (MobileNetV2) is not the best field model (ResNet18), so lab accuracy alone is a poor guide for choosing a model.
+
+Per-class reports and confusion matrices are produced by the same script.
 
 > The charts made by `compare_models.py` in the original project used hand-typed numbers and rough training times, so they are not used as results.
 
