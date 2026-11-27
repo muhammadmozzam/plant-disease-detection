@@ -44,7 +44,7 @@ Measured on 27 Nov 2026 on Kaggle (CPU). The field test uses all 2,922 PlantDoc 
 
 **What this shows**
 
-- All three models look nearly perfect on lab photos and fail on field photos: accuracy falls by 85–89 percentage points.
+- All three models look nearly perfect on lab photos and fail on field photos: accuracy falls by 84–89 percentage points.
 - The custom CNN trained from scratch is close to random guessing in the field (5.4% vs 3.6%); the two ImageNet-pretrained models keep a little more (10–13%).
 - The best lab model (MobileNetV2) is not the best field model (ResNet18), so lab accuracy alone is a poor guide for choosing a model.
 
