@@ -38,7 +38,8 @@ PLANTDOC_TO_PLANTVILLAGE = {
 
 
 def _key(name):
-    return " ".join(name.strip().lower().replace("-", " ").split())
+    # folder names come as "Apple Scab Leaf", "Apple_Scab_Leaf" or "apple-scab-leaf"
+    return " ".join(name.strip().lower().replace("-", " ").replace("_", " ").split())
 
 
 _LOOKUP = {_key(k): v for k, v in PLANTDOC_TO_PLANTVILLAGE.items()}
