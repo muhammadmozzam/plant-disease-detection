@@ -7,6 +7,19 @@ Three image classifiers (ResNet18, a small custom CNN and MobileNetV2) trained t
 - **March–May 2026:** built offline. Trained the three models on PlantVillage, wrote the FastAPI prediction API and the React + Vite frontend with a model selector.
 - **November 2026:** released the code and added a measured evaluation: a lab test on the PlantVillage validation split, and a field test on PlantDoc photos of the same crops and diseases.
 
+## Updates
+
+This started as an offline project in March–May 2026. I am now updating it in the open: the original training and app code is kept as it was (first commit), and each new piece of work is added on top as its own commit.
+
+| Date | What changed |
+|---|---|
+| Mar–May 2026 | Original version: three models trained on PlantVillage, FastAPI prediction API, React + Vite app with a model selector. |
+| Nov 2026 | Added `backend/evaluate.py`: a measured lab test (PlantVillage validation split) and a field test on PlantDoc photos, with per-class reports, confusion matrices, top-3 accuracy and CPU speed. |
+| Nov 2026 | Added `backend/plantdoc_map.py` (PlantDoc to PlantVillage class mapping) and `backend/models.py` (one shared model loader for the API and the evaluation). |
+| Nov 2026 | The API now loads class names from `backend/classes.json`, so it runs without the 54,000-image dataset on disk. |
+| 27 Nov 2026 | Ran the full evaluation on Kaggle (results below): 92–99% on lab photos, 5–13% on field photos. |
+| Next | Retrain with data augmentation and ImageNet normalisation, and test how many real field photos are needed to close the gap. |
+
 ## The question
 
 PlantVillage photos show a single leaf on a plain background in controlled light, and models trained on them often score above 95%. Farmers' photos look different: several leaves, soil, shadows, hands, different cameras. This project asks how much accuracy each model keeps when it moves from the lab to the field, and whether the smaller, faster models lose more.
